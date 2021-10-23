@@ -1,18 +1,25 @@
-from typing import List
 class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        left=0
-        right=len(numbers)-1
-        while left<right:
-            ans=numbers[left]+numbers[right]
-            if ans==target:
-                return [left+1,right+1]
-            elif ans>target:
-                right-=1
+    def romanToInt(self, s: str) -> int:
+        d={'I':1,
+           'V':5,
+           'X':10,
+           'L':50,
+           'C':100,
+           'D':500,
+           'M':1000}
+        ans=0
+        tmp1=0
+        for idx in s:
+            tmp2=d[idx]
+            if tmp1<tmp2:
+                ans=ans-tmp1 + (tmp2-tmp1)
+                tmp1=tmp2
             else:
-                left+=1
+                ans=ans+tmp2
+                tmp1 = tmp2
+        return ans
 
 s=Solution()
-nums = [2,7,11,15]
-target = 9
-print(s.twoSum(nums,target))
+txt= ['III','IV','IX','LVIII','MCMXCIV']
+for i in txt:
+    print(i, s.romanToInt(i))
