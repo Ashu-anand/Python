@@ -1,4 +1,5 @@
 from typing import List
+# Split the string and then check character by character.
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         l=[*s]
