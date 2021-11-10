@@ -9,5 +9,5 @@ class Solution:
         return a==a[::-1]
 
 s = Solution ()
-tst="A man, a plan, a canal: Panama"
+tst="This is my Test which i want to Test"
 print (s.isPalindrome(tst))
