@@ -14,9 +14,7 @@ class Solution:
         return ans
 
 
-import time
-nums=[1,2,3,4,5,6,7,8,9,10]
+nums=[1,1,2]
 s=Solution()
-start_time = time.time()
 Kavyansh=s.permute(nums)
-print("--- %s seconds ---" % (time.time() - start_time))
+print(Kavyansh)
